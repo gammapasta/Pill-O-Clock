@@ -55,10 +55,10 @@ static void Sys_Init(void)
 
     Uart2_RX_Interrupt_Enable();
 
-    NVIC_SetPriorityGrouping(3);
-    NVIC_SetPriority(41, 1);
-    NVIC_SetPriority(40, 2);
-    NVIC_SetPriority(38, 3);
+    NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+    NVIC_SetPriority(RTC_Alarm_IRQn, 1);              // RTC Alarm
+    NVIC_SetPriority(EXTI15_10_IRQn, 2);              // EXTI15_10
+    NVIC_SetPriority(USART2_IRQn, 3);              // USART2
 }
 
 // 7일 치 약통 자동 분배 함수
