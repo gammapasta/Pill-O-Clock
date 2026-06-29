@@ -205,7 +205,7 @@ void Main(void)
 
             Rotate_Next_Slot();
             Servo_Open_Close();
-            for(volatile int i=0;i<0x100000;i++);
+            TIM2_Delay(200);
 
             
             
@@ -297,7 +297,7 @@ void Main(void)
                     current_state = STATE_FINISHED;
 
                     Rotate_Next_Slot();
-                    for(volatile int i=0;i<0x100000;i++);
+                    TIM2_Delay(200);
                     Supply_Pill();
                 }
                 break;
